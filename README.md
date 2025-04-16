@@ -1,5 +1,7 @@
 # 🌟 **Welcome to My Portfolio**
 
+[**Live Site**](https://portfolio-tawny-tau-26.vercel.app/) - Check out my portfolio live! 🚀
+
 Hello and welcome to my personal portfolio website! This is where I showcase my work, share my skills, and provide a glimpse into my journey as a developer. Whether you’re here to see my projects, explore the technologies I use, or just connect with me, I’m glad you stopped by!
 
 ---
@@ -32,7 +34,6 @@ Here are some of the cool things you can experience on my site:
 
 I love connecting with fellow developers, designers, or anyone passionate about tech. If you'd like to reach out, you can contact me via the following:
 
-- [GitHub](https://github.com/Sayan0361) – Explore my repositories and open-source projects.
 - [LinkedIn](https://www.linkedin.com/in/sayan-sen-38b198255) – Let’s connect professionally!
 - [Instagram](https://www.instagram.com/sayan_sen007/) – For a more personal glimpse into my world.
 - [Email](mailto:sayansen0361@gmail.com) – Feel free to drop me an email!
@@ -48,4 +49,3 @@ I believe in collaboration and open-source development. If you’d like to contr
 ## 📝 **License**
 
 This project is open-source and available under the [MIT License](LICENSE). You’re free to use it, modify it, or contribute as you like!
-
