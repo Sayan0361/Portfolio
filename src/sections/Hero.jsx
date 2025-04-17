@@ -19,9 +19,9 @@ const Hero = () => {
 
   return (
     <section id="hero" className="relative overflow-hidden">
-      <div className="absolute top-0 left-0 z-10">
-        <img src="/images/bg.png" alt="background" />
-      </div>
+    {/* <div className="absolute top-0 left-0 z-0 w-full h-full">
+      <img src="/images/bg.png" alt="background" className="w-full h-full object-cover" />
+    </div> */}
 
       <div className="hero-layout">
         {/* LEFT: Hero Content */}
@@ -76,7 +76,7 @@ const Hero = () => {
 
         {/* RIGHT: 3D Model or Visual */}
         <figure>
-          <div className="hero-3d-layout">
+          <div className="hero-3d-layout z-10">
             <HeroExperience />
           </div>
         </figure>
