@@ -4,10 +4,12 @@ import gsap from "gsap";
 import TitleHeader from "../components/TitleHeader";
 import TechIconCardExperience from "../components/Models/TechLogos/TechIcon";
 import { techStackIcons } from "../constants";
-
+import { useMediaQuery } from "react-responsive";
 
 const TechStack = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" }); // Check if the screen width is less than or equal to 767px
   useGSAP(() => {
+    if(isMobile) return; // Skip animation on mobile devices
     gsap.fromTo(
       ".tech-card",
       {

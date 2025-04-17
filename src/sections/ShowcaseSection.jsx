@@ -5,14 +5,18 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 import { useGSAP } from '@gsap/react';
 import TitleHeader from '../components/TitleHeader';
+import {useMediaQuery} from 'react-responsive';
 
 const ShowcaseSection = () => {
     const sectionRef = useRef(null);
     const project1Ref = useRef(null);
     const project2Ref = useRef(null);
     const project3Ref = useRef(null);
-
+    const isMobile = useMediaQuery({ query: '(max-width: 767px)' }); // Check if the screen width is less than or equal to 767px
+    
     useGSAP(() => {
+        if(isMobile) return; // Skip animation on mobile devices
+
         const cards = [project1Ref.current, project2Ref.current, project3Ref.current];
     
         cards.forEach((card, index) => {

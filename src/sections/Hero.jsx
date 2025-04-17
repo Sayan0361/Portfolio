@@ -5,19 +5,22 @@ import HeroExperience from '../components/HeroModels/HeroExperience.jsx';
 import AnimatedCounter from '../components/AnimatedCounter.jsx';
 import { useGSAP } from '@gsap/react'; 
 import gsap from 'gsap';
-
+import { useMediaQuery } from 'react-responsive';
 
 const Hero = () => {
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' }); // Check if the screen width is less than or equal to 767px
   useGSAP(() => {
-    gsap.fromTo('.hero-text', { opacity: 0 }, { opacity: 1, duration: 1 ,ease: 'power2.inOut'});
+    if (isMobile) return; // Skip animation on mobile devices
+    gsap.fromTo('.hero-text', { opacity: 0 }, { opacity: 1, duration: 1, ease: 'power2.inOut' });
     gsap.fromTo('.hero-text h1', { y: 50 }, { y: 0, duration: 1, stagger: 0.5 });
     gsap.fromTo('.hero-3d-layout', { opacity: 0 }, { opacity: 1, duration: 1.5, delay: 0.5 });
     gsap.fromTo('.cta-wrapper', { opacity: 0 }, { opacity: 1, duration: 1, delay: 0.5 });
-  }); 
+  }, []);
+
   return (
     <section id="hero" className="relative overflow-hidden">
       <div className="absolute top-0 left-0 z-10">
-        <img src="/images/bg.png" alt="" />
+        <img src="/images/bg.png" alt="background" />
       </div>
 
       <div className="hero-layout">
@@ -26,20 +29,21 @@ const Hero = () => {
           <div className="flex flex-col gap-7">
             <div className="hero-text">
               <h1>
-                I'm <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 font-bold">
-                    Sayan Sen
-                  </span>,
-                <br />  I turn
+                I'm{' '}
+                <span className="italic text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 font-bold">
+                  Sayan Sen
+                </span>
+                ,<br /> I turn
                 <span className="slide">
                   <span className="wrapper">
                     {words.map((word, index) => (
                       <span
-                      key={index}
-                      className="flex items-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 md:gap-3 gap-1 pb-2"
-                    >                    
+                        key={index}
+                        className="flex items-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 md:gap-3 gap-1 pb-2"
+                      >
                         <img
                           src={word.imgPath}
-                          alt="person"
+                          alt={word.text}
                           className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-green-400"
                           style={{ filter: 'drop-shadow(0 0 5px #000)' }}
                         />
@@ -54,18 +58,19 @@ const Hero = () => {
             </div>
 
             <p className="text-yellow-200 md:text-xl relative z-10 pointer-events-none">
-            "Set your heart upon your work — not its reward.
-            <br/>  In every trial, I rise, a flame reborn." 
+              "Set your heart upon your work — not its reward.
+              <br /> In every trial, I rise, a flame reborn."
             </p>
             <p className="text-md italic text-red-300 mt-1">
               — inspired by Bhagavad Gita 2.47
             </p>
 
             <Button
-              text="See My Work"
-              className="md:w-80 md:h-16 w-50 h-10"
-              id="counter"
-            />
+                text="Click here to scroll down"
+                icon="arrow"
+                className="md:w-80 md:h-16 w-50 h-10"
+                id="counter"
+              />
           </div>
         </header>
 
@@ -76,12 +81,10 @@ const Hero = () => {
           </div>
         </figure>
       </div>
+
       <AnimatedCounter />
-      
     </section>
+  );
+};
 
-  )
-}
-
-export default Hero; 
-
+export default Hero;

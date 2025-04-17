@@ -5,11 +5,14 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { aboutCards } from "../constants";
 import TitleHeader from "../components/TitleHeader";
 import GlowCard from "../components/GlowCard";
+import { useMediaQuery } from "react-responsive";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutMe = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 767px)" }); // Check if the screen width is less than or equal to 767px
   useGSAP(() => {
+    if (isMobile) return; // Skip animation on mobile devices
     gsap.utils.toArray(".timeline-card").forEach((card) => {
       gsap.from(card, {
         xPercent: -100,
