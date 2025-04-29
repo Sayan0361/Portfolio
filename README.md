@@ -30,19 +30,6 @@ Here are some of the cool things you can experience on my site:
 
 ---
 
-## 📧 **Let’s Connect**
-
-I love connecting with fellow developers, designers, or anyone passionate about tech. If you'd like to reach out, you can contact me via the following:
-
-- [LinkedIn](https://www.linkedin.com/in/sayan-sen-38b198255) – Let’s connect professionally!
-- [Instagram](https://www.instagram.com/sayan_sen007/) – For a more personal glimpse into my world.
-- [Email](mailto:sayansen0361@gmail.com) – Feel free to drop me an email!
-
----
-
-## 🔄 **Contributing**
-
-I believe in collaboration and open-source development. If you’d like to contribute to this project, feel free to fork the repository, submit pull requests, or open issues. I’m always happy to improve my work and learn from others.
 
 ---
 
