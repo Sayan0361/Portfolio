@@ -30,9 +30,3 @@ Here are some of the cool things you can experience on my site:
 
 ---
 
-
----
-
-## 📝 **License**
-
-This project is open-source and available under the [MIT License](LICENSE). You’re free to use it, modify it, or contribute as you like!
