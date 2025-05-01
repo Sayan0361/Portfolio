@@ -1,106 +1,174 @@
-import React, { use } from 'react'
-import { useRef } from 'react';
-import {gsap} from 'gsap';
+import React, { useRef } from 'react';
+import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
 import { useGSAP } from '@gsap/react';
+import { useMediaQuery } from 'react-responsive';
 import TitleHeader from '../components/TitleHeader';
-import {useMediaQuery} from 'react-responsive';
+
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
 
 const ShowcaseSection = () => {
-    const sectionRef = useRef(null);
-    const project1Ref = useRef(null);
-    const project2Ref = useRef(null);
-    const project3Ref = useRef(null);
-    const isMobile = useMediaQuery({ query: '(max-width: 767px)' }); // Check if the screen width is less than or equal to 767px
-    
-    useGSAP(() => {
-        if(isMobile) return; // Skip animation on mobile devices
+  const sectionRef = useRef(null);
+  const project1Ref = useRef(null);
+  const project2Ref = useRef(null);
+  const project3Ref = useRef(null);
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  
+  useGSAP(() => {
+    if (isMobile) return; // Skip animation on mobile devices
 
-        const cards = [project1Ref.current, project2Ref.current, project3Ref.current];
+    const cards = [project1Ref.current, project2Ref.current, project3Ref.current];
+
+    // Animate each project card
+    cards.forEach((card, index) => {
+      gsap.fromTo(
+        card,
+        { y: 50, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.5,
+          delay: 0.2 * (index + 1),
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top bottom-=100'
+          },
+        }
+      );
+    });
     
-        cards.forEach((card, index) => {
-          gsap.fromTo(
-            card,
-            { y: 50, opacity: 0 },
-            {
-              y: 0,
-              opacity: 1,
-              duration: 2,
-              delay: 0.3 * (index + 1),
-              ease: 'power3.out',
-              scrollTrigger: {
-                trigger: card,
-                start: 'top bottom-=100'
-              },
-            }
-          );
-        });
-        
-        gsap.fromTo(
-            sectionRef.current,
-            { opacity: 0 },
-            {
-              opacity: 1,
-              duration: 1.5,
-              ease: 'power3.out',
-            }
-          );
-      }, []);
+    // Fade in the entire section
+    gsap.fromTo(
+      sectionRef.current,
+      { opacity: 0 },
+      {
+        opacity: 1,
+        duration: 1.2,
+        ease: 'power2.out',
+      }
+    );
+  }, [isMobile]);
+
   return (
-    <section id="work" ref={sectionRef} className='app-showcase'>
-        <div className='w-full h-full md:px-20 px-5'>
-            <TitleHeader
-            title="My Projects"
-            sub="🚀 Showcasing My Work"
-            />
-            <p className='text-white-50 flex justify-center md:text-lg mt-2'>
-                I'll update this section with better projects.
-            </p>
-            <div className='showcaselayout mt-20'>
-            {/* {LEFT} */}
-            <div className='first-project-wrapper' ref={project1Ref}>
-                <div className='image-wrapper bg-[#3445ff]'>
-                    <img src="/images/virtualr.png"/>
+    <section id="work" ref={sectionRef} className="py-16 bg-black">
+      <div className="container mx-auto px-4 md:px-8 lg:px-16">
+        <TitleHeader
+          title="My Projects"
+          sub="🚀 Showcasing My Work"
+        />
+        <p className="text-white-50 mt-3 text-center md:text-lg max-w-2xl mx-auto mb-16">
+          I will update this section with better projects.
+        </p>
+        
+        <div className="w-full mt-20">
+          <div className="mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Project 1 - Job Portal */}
+            <div 
+              ref={project1Ref} 
+              className="bg-zinc-950 rounded-xl card-border overflow-hidden shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:bg-zinc-900"
+            >
+              <div className="h-52 bg-gradient-to-r from-blue-600 to-indigo-700 flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/images/jobportal.png" 
+                  alt="HireMe Job Portal" 
+                  className="object-cover w-full h-full transform hover:scale-110 transition duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <a 
+                  href="https://github.com/Sayan0361/JobPortal" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-2xl font-bold bg-gradient-to-r from-cyan-400 via-teal-500 to-blue-500 text-transparent bg-clip-text hover:underline"
+                >
+                  HireMe - Job Portal
+                </a>
+                <p className="text-gray-300 mt-4">
+                    A smart job platform connecting <span className="text-green-400 font-medium">employers</span> and <span className="text-blue-400 font-medium">job seekers</span> through a seamless application process. Includes secure auth and custom dashboards.
+                </p>
+                <div className="flex flex-wrap gap-2 mt-4">
+                  <span className="px-3 py-1 bg-cyan-900/40 text-cyan-300 rounded-full text-xs">React.js</span>
+                  <span className="px-3 py-1 bg-blue-900/40 text-blue-300 rounded-full text-xs">Tailwind CSS</span>
+                  <span className="px-3 py-1 bg-green-900/40 text-green-300 rounded-full text-xs">Node.js</span>
+                  <span className="px-3 py-1 bg-yellow-400/50 text-yellow-300 rounded-full text-xs">Express</span>
+                  <span className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-xs">MongoDB</span>
                 </div>
-                <div className='text-content'>
-                    <a href="https://virtualr-2-296115l6d-sayan0361s-projects.vercel.app/" className='text-2xl md:text-3xl font-semibold bg-gradient-to-r from-yellow-400 via-pink-500 to-red-500 text-transparent bg-clip-text'>
-                        Virtual Reality
-                    </a>
-                    <p className='text-white-50 md:text-xl mt-2'>
-                        This immersive landing page is built using <span className='font-semibold text-blue-300'>React.js</span> and <span className='font-semibold text-green-300'>Tailwind CSS</span>. Designed with responsiveness in mind, it adapts seamlessly across devices and offers a modern UI.
-                    </p>
-                    <p className='text-white-50 md:text-lg mt-2'>
-                        The project focuses on UI/UX precision, scroll animations, and clean component-based architecture — a reflection of my growth in front-end development and modern web design practices.
-                    </p>
-                </div>
+              </div>
+            </div>
 
-            </div>
-            {/* {RIGHT} */}
-            <div className='project-list-wrapper overflow-hidden'>
-            <div className='project' ref={project2Ref}>
-                    <div className='image-wrapper bg-[#93d9ff]'>
-                        <img src="/images/jobportal.png"/>
-                    </div>
-                    <div className='text-content'>
-                        <a href="https://github.com/Sayan0361/JobPortal" target="_blank"
-                            rel="noopener noreferrer" className='text-2xl mt-5 md:text-3xl font-semibold bg-gradient-to-r from-cyan-400 via-teal-500 to-blue-500 text-transparent bg-clip-text'>Job-Portal</a>
-                    </div>
+            {/* Project 2 - ChatZone */}
+            <div 
+              ref={project2Ref} 
+              className="bg-zinc-950 rounded-xl card-border overflow-hidden shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:bg-zinc-900"
+            >
+              <div className="h-52 bg-gradient-to-r from-blue-400 to-cyan-500 flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/images/chatzone.png" 
+                  alt="ChatZone Project" 
+                  className="object-cover w-full h-full transform hover:scale-110 transition duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <a 
+                  href="https://github.com/Sayan0361/Chat-Zone" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-2xl font-bold bg-gradient-to-r from-blue-500 via-indigo-500 to-indigo-700 text-transparent bg-clip-text hover:underline"
+                >
+                  ChatZone
+                </a>
+                <p className="text-gray-300 mt-4">
+                    A sleek <span className="text-cyan-400 font-medium">chat app</span> using the <span className="text-green-400 font-medium">MERN stack</span>, featuring <span className="text-yellow-400 font-medium">secure login</span>, encrypted credentials, and a responsive UI. Private chats and WebSocket-based messaging are on the way.
+                </p>
+                <div className="flex flex-wrap gap-2 mt-4">
+                  <span className="px-3 py-1 bg-cyan-900/40 text-cyan-300 rounded-full text-xs">React.js</span>
+                  <span className="px-3 py-1 bg-blue-900/40 text-blue-300    rounded-full text-xs">Tailwind CSS</span>
+                  <span className="px-3 py-1 bg-yellow-900/40 text-yellow-300 rounded-full text-xs">Socket.io</span>
+                  <span className="px-3 py-1 bg-green-900/40 text-green-300 rounded-full text-xs">Node.js</span>
+                  <span className="px-3 py-1 bg-blue-900/40 text-blue-300 rounded-full text-xs">Express</span>
                 </div>
-                <div className='project' ref={project3Ref}>
-                    <div className='image-wrapper bg-[#5aff88]'>
-                        <img src="/images/EDA.png"/>
-                    </div>
-                    <div className='text-content'>
-                        <a href="https://colab.research.google.com/github/Sayan0361/EDA/blob/main/PLACEMENT.ipynb" target="_blank"
-                            rel="noopener noreferrer" className='text-2xl mt-5 md:text-3xl font-semibold bg-gradient-to-r from-green-400 via-lime-500 to-green-700 text-transparent bg-clip-text'>Exploratory Data Analysis</a>
-                    </div>
+              </div>
+            </div>
+
+            {/* Project 3 - VirtualR */}
+            <div 
+              ref={project3Ref} 
+              className="bg-zinc-950 rounded-xl card-border overflow-hidden shadow-xl transform transition duration-300 hover:scale-105 hover:shadow-2xl hover:bg-zinc-900"
+            >
+              <div className="h-52 bg-gradient-to-r from-green-400 to-emerald-500 flex items-center justify-center overflow-hidden">
+                <img 
+                  src="/images/virtualr.png" 
+                  alt="Virtual Reality Project" 
+                  className="object-cover w-full h-full transform hover:scale-110 transition duration-500"
+                />
+              </div>
+              <div className="p-6">
+                <a 
+                  href="https://virtualr-2-296115l6d-sayan0361s-projects.vercel.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-2xl font-bold bg-gradient-to-r from-yellow-400 via-pink-500 to-red-500 text-transparent bg-clip-text hover:underline"
+                >
+                  Virtual Reality
+                </a>
+                <p className="text-gray-300 mt-4">
+                    An immersive landing page for <span className="text-purple-400 font-medium">VR technology</span>, featuring <span className="text-blue-400 font-medium">parallax effects</span> and smooth animations for a dynamic user experience.
+                </p>
+
+                <div className="flex flex-wrap gap-2 mt-4">
+                  <span className="px-3 py-1 bg-cyan-900/40 text-cyan-300 rounded-full text-xs">React.js</span>
+                  <span className="px-3 py-1 bg-blue-900/40 text-blue-300 rounded-full text-xs">Tailwind CSS</span>
+                  <span className="px-3 py-1 bg-purple-900/40 text-purple-300 rounded-full text-xs">GSAP</span>
                 </div>
+              </div>
             </div>
-            </div>
+          </div>
         </div>
+      </div>
     </section>
-  )
-}
+  );
+};
 
-export default ShowcaseSection
+export default ShowcaseSection;
