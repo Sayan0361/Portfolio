@@ -8,9 +8,10 @@ import gsap from 'gsap';
 import { useMediaQuery } from 'react-responsive';
 
 const Hero = () => {
-  const isMobile = useMediaQuery({ query: '(max-width: 767px)' }); // Check if the screen width is less than or equal to 767px
+  const isMobile = useMediaQuery({ query: '(max-width: 767px)' });
+  
   useGSAP(() => {
-    if (isMobile) return; // Skip animation on mobile devices
+    if (isMobile) return;
     gsap.fromTo('.hero-text', { opacity: 0 }, { opacity: 1, duration: 1, ease: 'power2.inOut' });
     gsap.fromTo('.hero-text h1', { y: 50 }, { y: 0, duration: 1, stagger: 0.5 });
     gsap.fromTo('.hero-3d-layout', { opacity: 0 }, { opacity: 1, duration: 1.5, delay: 0.5 });
@@ -18,14 +19,10 @@ const Hero = () => {
   }, []);
 
   return (
-    <section id="hero" className="relative overflow-hidden">
-    {/* <div className="absolute top-0 left-0 z-0 w-full h-full">
-      <img src="/images/bg.png" alt="background" className="w-full h-full object-cover" />
-    </div> */}
-
+    <section id="hero" className="relative overflow-hidden bg-black min-h-screen">
       <div className="hero-layout">
         {/* LEFT: Hero Content */}
-        <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
+        <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5 py-8">
           <div className="flex flex-col gap-7">
             <div className="hero-text">
               <h1>
@@ -57,32 +54,46 @@ const Hero = () => {
               <h1>people love to use.</h1>
             </div>
 
-            <p className="text-yellow-200 md:text-xl relative z-10 pointer-events-none">
+            <p className="text-yellow-300/90 md:text-xl text-base relative z-10 pointer-events-none transition-colors duration-300">
               "Set your heart upon your work — not its reward.
-              <br /> In every trial, I rise, a flame reborn."
+              <br className="hidden md:block" /> 
+              <span className="md:hidden"> </span>
+              In every trial, I rise, a flame reborn."
             </p>
-            <p className="text-md italic text-red-300 mt-1">
+            <p className="text-sm md:text-base italic text-red-300/80 mt-1">
               — inspired by Bhagavad Gita 2.47
             </p>
-
-            <Button
-                text="Click here to scroll down"
-                icon="arrow"
-                className="md:w-80 md:h-16 w-50 h-10"
-                id="counter"
+            <div className="flex flex-col sm:flex-row gap-4 mt-6">
+              <Button
+                text="View My Resume"
+                icon="download"
+                className="sm:w-auto px-8 py-3 text-lg rounded-2xl bg-transparent border-2 border-white/20 hover:bg-white/10 hover:border-white/30"
+                onClick={() => window.open('https://drive.google.com/drive/folders/1LhJ3x8rBIGwJa_73Eqi3HH0rVs70agwK?usp=drive_link', '_blank')}
               />
+            </div>
+
+            
           </div>
         </header>
 
         {/* RIGHT: 3D Model or Visual */}
-        <figure>
+        <figure className="md:block hidden">
           <div className="hero-3d-layout z-10">
             <HeroExperience />
           </div>
         </figure>
       </div>
-
-      <AnimatedCounter />
+      
+      {/* AnimatedCounter with forced black background */}
+      <div className="w-full bg-black">
+        <div className="animated-counter-wrapper" 
+            style={{ 
+              backgroundColor: '#000000 !important',
+              background: '#000000 !important' 
+            }}>
+          <AnimatedCounter />
+        </div>
+      </div>
     </section>
   );
 };

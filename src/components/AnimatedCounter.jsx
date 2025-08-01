@@ -4,7 +4,7 @@ import CountUp from 'react-countup';
 
 const AnimatedCounter = () => {
   return (
-    <div id="counter" className="px-6 xl:mt-0 mt-20 relative z-10">
+    <div id="counter" className="px-6 xl:mt-0 relative z-10 bg-black">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-4 gap-6 max-w-6xl mx-auto">
         {counterItems.map((item, index) => (
           <div

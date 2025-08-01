@@ -8,7 +8,7 @@ const FeatureCards = () => {
     id="strengths"
     className="flex-center md:mt-40 mt-20 section-padding xl:px-0"
     >
-        <div className="w-full h-full md:px-20 px-5">
+        <div className="container mx-auto px-4 md:px-8 lg:px-16 relative">
             <TitleHeader
                 title="My Core Strengths"
                 sub="💡 What I bring to the table"
