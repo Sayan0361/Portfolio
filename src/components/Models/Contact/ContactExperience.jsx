@@ -25,7 +25,7 @@ const AnimatedModel = () => {
       rotation={[0.15, 0, 0]} // Slight forward tilt and face forward
       position={[0, -1.2, 0]}
     >
-      <Lost />
+      <Lost/>
     </group>
   );
 };
