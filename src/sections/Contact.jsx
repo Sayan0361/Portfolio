@@ -3,6 +3,7 @@ import TitleHeader from '../components/TitleHeader'
 import ContactExperience from '../components/Models/Contact/ContactExperience'
 import { useState, useRef } from 'react'
 import emailjs from '@emailjs/browser'
+import toast, { Toaster } from 'react-hot-toast'
 
 const Contact = () => {
   const formRef = useRef(null);
@@ -20,7 +21,8 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true); // Show loading state
+    setLoading(true);
+    const toastId = toast.loading('Sending your message...');
 
     try {
       await emailjs.sendForm(
@@ -30,19 +32,29 @@ const Contact = () => {
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       );
 
-      // Reset form and stop loading
+      // Success case
       setForm({ name: "", email: "", message: "" });
+      toast.success('Message sent successfully!', { id: toastId });
     } catch (error) {
-        console.error("EmailJS Error:", error); // Optional: show toast
+      console.error("EmailJS Error:", error);
+      toast.error('Failed to send message. Please try again later.', { id: toastId });
     } finally {
-        setLoading(false); 
-        alert("Failed to send message. Please try again later.");
-        // Always stop loading, even on error
+      setLoading(false);
     }
   };
 
   return (
     <section id="contact" className="flex-center section-padding">
+      <Toaster 
+        position="top-center"
+        toastOptions={{
+          style: {
+            background: '#1e293b',
+            color: '#ffffff',
+            border: '1px solid #334155'
+          }
+        }}
+      />
       <div className="w-full h-full md:px-10 px-5">
         <TitleHeader
           title="Get in Touch with Me "
@@ -65,7 +77,7 @@ const Contact = () => {
                     name="name"
                     value={form.name}
                     onChange={handleChange}
-                    placeholder="What’s your good name?"
+                    placeholder="What's your good name?"
                     required
                   />
                 </div>
@@ -78,7 +90,7 @@ const Contact = () => {
                     name="email"
                     value={form.email}
                     onChange={handleChange}
-                    placeholder="What’s your email address?"
+                    placeholder="What's your email address?"
                     required
                   />
                 </div>
@@ -96,7 +108,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <button type="submit">
+                <button type="submit" disabled={loading}>
                   <div className="cta-button group">
                     <div className="bg-circle" />
                     <p className="text">
@@ -120,5 +132,4 @@ const Contact = () => {
   );
 };
 
-
-export default Contact
+export default Contact;
