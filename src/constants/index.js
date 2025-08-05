@@ -29,10 +29,30 @@ const words = [
 ];
 
 const counterItems = [
-  { value: 10, suffix: "+", label: "Personal Projects" },
-  { value: 350, suffix: "+", label: "DSA Problems Solved" },
-  { value: 5, suffix: "+", label: "Tech Stacks Explored" },
-  { value: 5, suffix: "+", label: "Coding Competitions" }
+  {
+    value: 1550,
+    suffix: "+",
+    label: "LeetCode Rating",
+    description: "Top 30% globally"
+  },
+  {
+    value: 500,
+    suffix: "+",
+    label: "Problems Solved",
+    description: "DSA mastery across all coding platforms"
+  },
+  {
+    value: 200,
+    suffix: "+",
+    label: "GitHub Contributions",
+    description: "Consistent coding activity last year"
+  },
+  {
+    value: 5,
+    suffix: "+",
+    label: "Projects",
+    description: "Production-ready fullstack applications"
+  }
 ];
 
 
@@ -150,39 +170,37 @@ const techStackIcons = [
 
 const aboutCards = [
   {
-    title: "A Curious Mind, A Coder’s Heart",
-    subtitle: "Started with curiosity, staying for the passion.",
+    title: "The Coder from Barrackpore",
+    subtitle: "Started with curiosity, staying for the passion",
     date: "💻 Since 2022",
-    imgPath: "/images/exp1.png",
-    logoPath: "/images/logo1.png",
     points: [
-      "Started my coding journey out of pure curiosity and the fun of building stuff.",
-      "Dove into DSA, web dev, and got my hands dirty with the MERN stack.",
-      "These days, I’m exploring backend dev and working on real-world projects."
+      "Born and raised in Barrackpore, now building my future in tech",
+      "Self-taught coder who fell in love with problem solving through DSA",
+      "MERN stack specialist currently exploring Next.js ecosystem",
+      "1550+ LeetCode rating (Top 30%) with 500+ problems solved"
     ]
   },
   {
-    title: "Fueled by Knowledge",
-    subtitle: "Every class, every bug — part of the journey.",
-    date: "🎓 B.Tech in IT",
-    imgPath: "/images/exp2.png",
-    logoPath: "/images/logo2.png",
+    title: "Scholar & Technologist",
+    subtitle: "Balancing academics with hands-on learning",
+    date: "🎓 B.Tech in IT | 8.57 CGPA",
     points: [
-      "Currently pursuing B.Tech in Information Technology from B.P. Poddar Institute.",
-      "Learning core subjects like OS, DBMS, CN, SE — all that good stuff.",
-      "Mixing theory with side projects and trying to make the most of my college years."
+      "Pursuing B.Tech in Information Technology from BP Poddar Institute, Kolkata",
+      "Maintaining strong 8.57 CGPA while building practical skills",
+      "Mastering core CS concepts: OS, DBMS, Computer Networks, Software Engineering",
+      "Consistent academic performer with 92% in 12th & 89% in 10th (Assembly of Christ School)"
     ]
   },
   {
-    title: "The Journey Continues",
-    subtitle: "Still learning, still growing, still coding.",
-    date: "🚀 Still Learning",
-    imgPath: "/images/exp3.png",
-    logoPath: "/images/logo3.png",
+    title: "The Builder's Mindset",
+    subtitle: "From classroom concepts to real-world applications",
+    date: "🚀 Projects & Growth",
     points: [
-      "I learn best by doing — projects, bugs, late-night debugging sessions… all of it.",
-      "Always up for learning new tech, getting feedback, and growing bit by bit.",
-      "This is just the beginning — way more to learn, build, and share ahead."
+      "Developed 5+ production-grade MERN stack applications",
+      "200+ GitHub contributions showcasing consistent coding activity",
+      "Runner-up in Inter College Coding Competition",
+      "Passionate about open-source contributions and technical writing",
+      "Believe in: 'Learn → Build → Share → Repeat' cycle"
     ]
   }
 ];
