@@ -7,6 +7,7 @@
 
 html,
 body {
+  margin: 0;
   width: 100dvw;
   overflow-x: hidden;
   background-color: black;
@@ -474,3 +475,4 @@ section {
 .card:hover::before {
   opacity: 1;
 }
+

@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { useMediaQuery } from 'react-responsive';
 import TitleHeader from '../components/TitleHeader';
+import ShinyText from '../components/ShinyText';
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);

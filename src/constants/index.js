@@ -30,10 +30,10 @@ const words = [
 
 const counterItems = [
   {
-    value: 1550,
+    value: 1600,
     suffix: "+",
     label: "LeetCode Rating",
-    description: "Top 30% globally"
+    description: "Top 20% globally"
   },
   {
     value: 500,
