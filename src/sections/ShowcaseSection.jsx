@@ -4,7 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { useMediaQuery } from 'react-responsive';
 import TitleHeader from '../components/TitleHeader';
-import ShinyText from '../components/ShinyText';
+
 
 // Register GSAP plugins
 gsap.registerPlugin(ScrollTrigger);
@@ -153,7 +153,7 @@ const ShowcaseSection = () => {
                   </span>
                 </div>
                 <p className="text-gray-300 mt-3 text-sm leading-relaxed">
-                  A feature-rich job platform that bridges the gap between <span className="text-green-400 font-medium">employers</span> and <span className="text-blue-400 font-medium">job seekers</span>. It offers <span className="text-yellow-300 font-medium">secure authentication</span>, a sleek <span className="text-yellow-500 font-medium">dark/light mode</span>, a collaborative <span className="text-orange-300 font-medium">community forum</span>, and an intelligent <span className="text-orange-500 font-medium">chatbot assistant</span>.
+                  A feature-rich job platform that bridges the gap between employers and job seekers. It offers secure authentication, a sleek dark/light mode, a collaborative community forum, and an intelligent chatbot assistant.
                 </p>
 
                 <div className="flex flex-wrap gap-2 mt-5 pt-4 border-t border-zinc-800">
@@ -207,7 +207,7 @@ const ShowcaseSection = () => {
                   </span>
                 </div>
                 <p className="text-gray-300 mt-3 text-sm leading-relaxed">
-                  <span className="text-cyan-400 font-semibold">CreationSuite.ai</span> is an <span className="text-pink-400 font-medium">AI-powered SaaS platform</span> offering smart tools for content generation, resume review, and visual creativity. Integrated with cutting-edge AI APIs like <code className="text-purple-300">Gemini</code> & <code className="text-green-300">Clipdrop</code>.
+                  CreationSuite.ai is an AI-powered SaaS platform offering smart tools for content generation, resume review, and visual creativity. Integrated with cutting-edge AI APIs like Gemini & Clipdrop.
                 </p>
 
                 <div className="flex flex-wrap gap-2 mt-5 pt-4 border-t border-zinc-800">
@@ -261,7 +261,7 @@ const ShowcaseSection = () => {
                   </span>
                 </div>
                 <p className="text-gray-300 mt-3 text-sm leading-relaxed">
-                  LangBridge empowers users to master new languages through <span className="text-lime-600 font-medium">authentic conversations</span> with native speakers. Features <span className="text-lime-400 font-medium">text chat</span>, <span className="text-lime-600 font-medium">video calls</span>, and over <span className="text-green-500 font-medium">30 customizable UI themes</span>.
+                  LangBridge empowers users to master new languages through authentic conversations with native speakers. Features text chat, video calls, and over 30 customizable UI themes.
                 </p>
 
                 <div className="flex flex-wrap gap-2 mt-5 pt-4 border-t border-zinc-800">
@@ -316,7 +316,7 @@ const ShowcaseSection = () => {
                   </span>
                 </div>
                 <p className="text-gray-300 mt-3 text-sm leading-relaxed">
-                  A real-time location sharing app featuring <span className="text-green-400 font-medium">GPS tracking</span>, <span className="text-purple-400 font-medium">live updates</span> via <code className="text-yellow-300">Socket.IO</code>, and an <span className="text-emerald-400 font-medium">interactive map</span> with <code className="text-green-300">Leaflet/Mapbox</code>.
+                  A real-time location sharing app featuring GPS tracking, live updates via Socket.IO, and an interactive map with Leaflet/Mapbox.
                 </p>
 
                 <div className="flex flex-wrap gap-2 mt-5 pt-4 border-t border-zinc-800">
@@ -370,7 +370,7 @@ const ShowcaseSection = () => {
                   </span>
                 </div>
                 <p className="text-gray-300 mt-3 text-sm leading-relaxed">
-                  An immersive landing page showcasing <span className="text-purple-400 font-medium">VR technology</span>, with <span className="text-blue-400 font-medium">parallax effects</span>, <span className="text-green-400 font-medium">GSAP animations</span>, and a modern aesthetic for engaging user experience.
+                  An immersive landing page showcasing VR technology, with parallax effects, GSAP animations, and a modern aesthetic for engaging user experience.
                 </p>
 
                 <div className="flex flex-wrap gap-2 mt-5 pt-4 border-t border-zinc-800">
@@ -415,14 +415,14 @@ const ShowcaseSection = () => {
                     rel="noopener noreferrer" 
                     className="text-2xl font-bold bg-gradient-to-r from-yellow-400 via-pink-500 to-red-500 text-transparent bg-clip-text hover:underline"
                   >
-                    The Amazing Spider-Man 2
+                    Spider-Man 
                   </a>
                   <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-900/40 text-red-300">
                     Landing Page
                   </span>
                 </div>
                 <p className="text-gray-300 mt-3 text-sm leading-relaxed">
-                  A <span className="text-orange-400 font-medium">high-impact, interactive website</span> for a conceptual <span className="text-red-600 font-medium">Spider-Man game</span>. Built with <code className="text-yellow-300">HTML</code>, <code className="text-blue-400">CSS</code>, and <code className="text-green-400">JavaScript</code> with cinematic design.
+                  A high-impact, interactive website for a conceptual Spider-Man game. Built with HTML, CSS, and JavaScript with cinematic design.
                 </p>
 
                 <div className="flex flex-wrap gap-2 mt-5 pt-4 border-t border-zinc-800">

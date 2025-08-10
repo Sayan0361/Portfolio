@@ -6,7 +6,7 @@ const FeatureCards = () => {
   return (
     <section
     id="strengths"
-    className="flex-center md:mt-40 mt-20 section-padding xl:px-0"
+    className="bg-black flex-center md:mt-40 mt-20 section-padding xl:px-0"
     >
         <div className="container mx-auto px-4 md:px-8 lg:px-16 relative">
             <TitleHeader

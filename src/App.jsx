@@ -25,7 +25,7 @@ const App = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <div className='bg-zinc-950'>
+        <div className='bg-black'>
           <Navbar />
           <Hero />
           <ShowcaseSection />

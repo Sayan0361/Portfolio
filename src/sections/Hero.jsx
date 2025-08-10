@@ -83,7 +83,7 @@ const Hero = () => {
         </figure>
       </div>
       
-      {/* AnimatedCounter with forced black background */}
+      {/* AnimatedCounter */}
       <div className="w-full bg-black">
         <div className="animated-counter-wrapper" 
             style={{ 
