@@ -55,43 +55,6 @@ const counterItems = [
   }
 ];
 
-
-const logoIconsList = [
-  {
-    imgPath: "/images/logos/company-logo-1.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-2.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-3.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-4.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-5.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-6.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-7.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-8.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-9.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-10.png",
-  },
-  {
-    imgPath: "/images/logos/company-logo-11.png",
-  },
-];
-
 const abilities = [
   {
     imgPath: "/images/brain.png",
@@ -107,6 +70,210 @@ const abilities = [
     imgPath: "/images/goals.png",
     title: "Detail-Oriented by Nature",
     desc: "From layout to logic, I care about the little things. It's not just about getting it to work — it's about making it great.",
+  },
+];
+
+export const myProjects = [
+  {
+    id: 1,
+    title: "HireMe - Job Portal",
+    description: "A feature-rich job platform that bridges the gap between employers and job seekers. It offers secure authentication, a sleek dark/light mode, a collaborative community forum, and an intelligent chatbot assistant.",
+    subDescription: [
+      "Built a scalable application with React.js and Node.js, integrating job posting and application features.",
+      "Implemented secure authentication and database management using MongoDB.",
+      "Designed a responsive frontend with Tailwind CSS, enhancing user experience.",
+      "Added community forum and chatbot features for improved user engagement.",
+    ],
+    href: "https://github.com/Sayan0361/JobPortal",
+    logo: "",
+    image: "/images/jobportal.png",
+    tags: [
+      {
+        id: 1,
+        name: "React.js",
+        path: "/assets/logos/react.svg",
+      },
+      {
+        id: 2,
+        name: "Tailwind",
+        path: "/assets/logos/tailwindcss.svg",
+      },
+      {
+        id: 3,
+        name: "Node.js",
+        path: "/assets/logos/nodejs.svg",
+      },
+      {
+        id: 4,
+        name: "MongoDB",
+        path: "/assets/logos/mongodb.svg",
+      },
+    ],
+  },
+  {
+    id: 2,
+    title: "CreationSuite.ai",
+    description: "CreationSuite.ai is an AI-powered SaaS platform offering smart tools for content generation, resume review, and visual creativity. Integrated with cutting-edge AI APIs like Gemini & Clipdrop.",
+    subDescription: [
+      "Developed a fully interactive AI-powered platform with React.js.",
+      "Integrated multiple AI APIs including Gemini and Clipdrop for various features.",
+      "Designed responsive UI components with Tailwind CSS for an enhanced UX.",
+      "Implemented PostgreSQL for efficient database storage.",
+    ],
+    href: "https://creation-suite-ai.vercel.app/",
+    logo: "",
+    image: "/images/creationsuite.png",
+    tags: [
+      {
+        id: 1,
+        name: "React.js",
+        path: "/assets/logos/react.svg",
+      },
+      {
+        id: 2,
+        name: "Tailwind",
+        path: "/assets/logos/tailwindcss.svg",
+      },
+      {
+        id: 3,
+        name: "Node.js",
+        path: "/assets/logos/nodejs.svg",
+      },
+      {
+        id: 4,
+        name: "PostgreSQL",
+        path: "/assets/logos/postgresql.svg",
+      },
+      {
+        id: 5,
+        name: "AI APIs",
+        path: "/assets/logos/ai.svg",
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "LangBridge",
+    description: "LangBridge empowers users to master new languages through authentic conversations with native speakers. Features text chat, video calls, and over 30 customizable UI themes.",
+    subDescription: [
+      "Built a language learning platform with React.js and Node.js.",
+      "Integrated Stream Chat for real-time messaging between users.",
+      "Implemented video call functionality for language practice.",
+      "Designed customizable UI themes with Tailwind CSS.",
+    ],
+    href: "https://langbridge-4c3e.onrender.com/",
+    logo: "",
+    image: "/images/langbridge.png",
+    tags: [
+      {
+        id: 1,
+        name: "React.js",
+        path: "/assets/logos/react.svg",
+      },
+      {
+        id: 2,
+        name: "Tailwind",
+        path: "/assets/logos/tailwindcss.svg",
+      },
+      {
+        id: 3,
+        name: "MongoDB",
+        path: "/assets/logos/mongodb.svg",
+      },
+      {
+        id: 4,
+        name: "Node.js",
+        path: "/assets/logos/nodejs.svg",
+      },
+    ],
+  },
+  {
+    id: 4,
+    title: "Real Time Tracking",
+    description: "A real-time location sharing app featuring GPS tracking, live updates via Socket.IO, and an interactive map with Leaflet/Mapbox.",
+    subDescription: [
+      "Developed a real-time tracking application with EJS and JavaScript.",
+      "Integrated Leaflet/Mapbox for interactive map functionality.",
+      "Implemented Socket.IO for live location updates between users.",
+      "Built backend with Node.js and Express.",
+    ],
+    href: "https://real-time-tracking-app-8ijl.onrender.com/",
+    logo: "",
+    image: "/images/Map.png",
+    tags: [
+      {
+        id: 1,
+        name: "CSS",
+        path: "/assets/logos/css3.svg",
+      },
+      {
+        id: 2,
+        name: "EJS",
+        path: "/assets/logos/javascript.svg",
+      },
+      {
+        id: 3,
+        name: "Leaflet",
+        path: "/assets/logos/leaflet.svg",
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: "Virtual Reality Landing Page",
+    description: "An immersive landing page showcasing VR technology, with parallax effects, GSAP animations, and a modern aesthetic for engaging user experience.",
+    subDescription: [
+      "Created an immersive VR landing page with React.js.",
+      "Implemented GSAP animations for engaging user interactions.",
+      "Designed with Tailwind CSS for responsive styling.",
+      "Added parallax effects for depth and immersion.",
+    ],
+    href: "https://virtualr-2-296115l6d-sayan0361s-projects.vercel.app/",
+    logo: "",
+    image: "/images/virtualr.png",
+    tags: [
+      {
+        id: 1,
+        name: "React.js",
+        path: "/assets/logos/react.svg",
+      },
+      {
+        id: 2,
+        name: "Tailwind",
+        path: "/assets/logos/tailwindcss.svg",
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "Spider-Man Landing Page",
+    description: "A high-impact, interactive website for a conceptual Spider-Man game. Built with HTML, CSS, and JavaScript with cinematic design.",
+    subDescription: [
+      "Developed an interactive Spider-Man game landing page.",
+      "Built with vanilla HTML, CSS, and JavaScript.",
+      "Implemented cinematic animations and effects.",
+      "Designed for high visual impact and engagement.",
+    ],
+    href: "https://spiderman-landing-page.onrender.com/",
+    logo: "",
+    image: "/images/spiderman.png",
+    tags: [
+      {
+        id: 1,
+        name: "HTML",
+        path: "/assets/logos/html5.svg",
+      },
+      {
+        id: 2,
+        name: "CSS",
+        path: "/assets/logos/css3.svg",
+      },
+      {
+        id: 3,
+        name: "JavaScript",
+        path: "/assets/logos/javascript.svg",
+      },
+    ],
   },
 ];
 
@@ -257,7 +424,6 @@ const socialImgs = [
 export {
   words,
   abilities,
-  logoIconsList,
   counterItems,
   aboutCards,
   expLogos,

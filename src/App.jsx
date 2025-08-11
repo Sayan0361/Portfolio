@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Hero from './sections/Hero';
-import ShowcaseSection from './sections/ShowcaseSection';
+// import ShowcaseSection from './sections/ShowcaseSection';
 import Navbar from './components/Navbar';
 import FeatureCards from './sections/FeatureCards';
 import TechStack from './sections/TechStack';
@@ -8,6 +8,7 @@ import AboutMe from './sections/AboutMe';
 import Contact from './sections/Contact';
 import Footer from './sections/Footer';
 import Loader from './components/Loader';
+import Projects from './sections/Projects';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,7 +29,8 @@ const App = () => {
         <div className='bg-black'>
           <Navbar />
           <Hero />
-          <ShowcaseSection />
+          <Projects/>
+          {/* <ShowcaseSection /> */}
           <FeatureCards />
           <AboutMe />
           <TechStack />
