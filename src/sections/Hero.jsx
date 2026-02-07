@@ -53,15 +53,7 @@ const Hero = () => {
               <h1>into things</h1>
               <h1>people love to use.</h1>
             </div>
-            
-            <p className="text-yellow-300/90 md:text-xl text-base relative z-10 pointer-events-none transition-colors duration-300">
-              "You have the right to code, but not to the output - 
-              <br className="hidden md:block" /> 
-              Focus on the process, the bugs will follow."
-            </p>
-            <p className="text-sm md:text-base italic text-red-300/80 mt-1">
-              — Bhagavad Gita 2.47 (Developer's Edition)
-            </p>
+    
             <div className="flex flex-col sm:flex-row gap-4 mt-6">
               <Button
                 text="View My Resume"
