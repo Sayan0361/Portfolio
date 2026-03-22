@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Hero from './sections/Hero';
-// import ShowcaseSection from './sections/ShowcaseSection';
+import Work from './sections/Work';
 import Navbar from './components/Navbar';
 import FeatureCards from './sections/FeatureCards';
 import TechStack from './sections/TechStack';
@@ -28,9 +28,9 @@ const App = () => {
       ) : (
         <div className='bg-black'>
           <Navbar />
-          <Hero />
+          <Hero/>
+          <Work/>
           <Projects/>
-          {/* <ShowcaseSection /> */}
           <FeatureCards />
           <AboutMe />
           <TechStack />

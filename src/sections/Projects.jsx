@@ -15,6 +15,7 @@ const Projects = () => {
     const [preview, setPreview] = useState(null);
     return (
         <section
+            id="projects"
             onMouseMove={handleMouseMove}
             className="py-20 bg-black relative overflow-hidden"
         >

@@ -4,6 +4,10 @@ const navLinks = [
     link: "#work",
   },
   {
+    name: "Projects",
+    link: "#projects",
+  },
+  {
     name: "Strengths",
     link: "#strengths",
   },
@@ -552,6 +556,21 @@ const socialImgs = [
   },
 ];
 
+const features = [
+    {
+        title: "Product-Focused Development",
+        desc: "Contributing to EZReports, a web-based management system used by 5,000+ schools and 9 State DOEs for grant-funded programs.",
+    },
+    {
+        title: "Full-Stack Maintenance",
+        desc: "Working across the stack with ASP.NET MVC and jQuery to handle complex data collection and reporting requirements.",
+    },
+    {
+        title: "Data & Performance",
+        desc: "Managing data flow using SQL Server and Dapper ORM to ensure efficient reporting for federal and state-level grants.",
+    }
+];
+
 export {
   words,
   abilities,
@@ -562,4 +581,5 @@ export {
   techStackIcons,
   techStackImgs,
   navLinks,
+  features
 };
